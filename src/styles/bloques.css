@@ -1,0 +1,58 @@
+/* Bloques.css */
+
+/* Estilos de cada opción del menú */
+.option {
+    margin: 10px; /* Espacio entre cada opción */
+    padding: 20px; /* Espacio interno de cada opción */
+    border: 1px solid #ccc; /* Borde delgado alrededor de cada opción */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #e0e0e0; /* Color de fondo de las opciones */
+    width: 300px; /* Ancho fijo para cada opción (aumentado de 250px a 300px) */
+    height: auto; /* Altura automática según el contenido */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de cada opción */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
+    display: flex; /* Ajuste para alinear elementos verticalmente */
+    flex-direction: column; /* Ajuste para alinear elementos verticalmente */
+  }
+  
+  /* Efecto de zoom al pasar el mouse sobre una opción */
+  .option:hover {
+    transform: scale(1.10); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  }
+  
+  .option img {
+    width: 100%; /* Imágenes dentro de las opciones ocupan todo el ancho disponible */
+    height: 70%; /* Ajuste de altura de la imagen */
+    border-radius: 5px 5px 0 0; /* Bordes redondeados en la parte superior de las imágenes */
+  }
+  
+  .option h3 {
+    font-size: 18px; /* Tamaño de fuente del título */
+    font-weight: bold; /* Negrita para hacerlo más legible */
+    margin: 10px 0; /* Espacio alrededor del título */
+    text-align: center; /* Centra el texto del título */
+  }
+  
+  .option p {
+    font-size: 16px; /* Tamaño de fuente del texto de la opción */
+    margin-top: 10px; /* Espacio superior entre el título y el texto */
+    text-align: center; /* Centra el texto */
+  }
+  
+  .option button {
+    margin-top: auto; /* Coloca el botón al final del contenedor */
+    align-self: center; /* Centra horizontalmente el botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde alrededor del botón */
+    padding: 8px 16px; /* Espacio interno del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo del botón */
+  }
+  
+  .option button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo del botón al pasar el mouse */
+  }
+
+  

@@ -1,0 +1,58 @@
+/* PaginaPrincipal.css */
+
+/* Estilos generales del menú */
+.menu {
+    text-align: center; /* Centra el contenido del menú */
+    padding: 20px; /* Espacio alrededor del menú */
+  }
+  
+  .menu-options {
+    display: flex; /* Utiliza un diseño flexible para las opciones del menú */
+    flex-wrap: wrap; /* Permite que las opciones del menú se envuelvan en varias líneas si no hay suficiente espacio */
+    justify-content: center; /* Centra las opciones horizontalmente dentro del menú */
+  }
+  
+  /* Estilos de cada opción del menú */
+  .option {
+    margin: 10px; /* Espacio entre cada opción */
+    padding: 20px; /* Espacio interno de cada opción */
+    border: 1px solid #ccc; /* Borde delgado alrededor de cada opción */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #e0e0e0; /* Color de fondo de las opciones */
+    width: 250px; /* Ancho fijo para cada opción */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de cada opción */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
+  }
+  
+  /* Efecto de zoom al pasar el mouse sobre una opción */
+  .option:hover {
+    transform: scale(1.10); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  }
+  
+  .option img {
+    width: 100%; /* Imágenes dentro de las opciones ocupan todo el ancho disponible */
+    border-radius: 5px 5px 0 0; /* Bordes redondeados en la parte superior de las imágenes */
+  }
+  
+  .option p {
+    font-size: 16px; /* Tamaño de fuente del texto de la opción */
+    margin-top: 10px; /* Espacio superior entre la imagen y el texto */
+  }
+  
+  .option button {
+    margin-top: 10px; /* Espacio superior entre el texto y el botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde alrededor del botón */
+    padding: 8px 16px; /* Espacio interno del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo del botón */
+  }
+  
+  .option button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo del botón al pasar el mouse */
+  }
+  
+  
+  
