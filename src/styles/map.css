@@ -1,0 +1,15 @@
+/* map.css */
+.map-container {
+    text-align: center;
+    position: relative;
+  }
+  
+  .map-container img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #ccc; /* Marco gris para la imagen */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    margin-top: 20px; /* Espacio arriba de la imagen */
+  }
+  

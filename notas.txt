@@ -1,0 +1,15 @@
+.menu {
+  text-align: center;
+  /* Centra el contenido del menú */
+  padding: 20px;
+  /* Espacio alrededor del menú */
+}
+
+.menu-options {
+  display: flex;
+  /* Utiliza un diseño flexible para las opciones del menú */
+  flex-wrap: wrap;
+  /* Permite que las opciones del menú se envuelvan en varias líneas si no hay suficiente espacio */
+  justify-content: center;
+  /* Centra las opciones horizontalmente dentro del menú */
+}
