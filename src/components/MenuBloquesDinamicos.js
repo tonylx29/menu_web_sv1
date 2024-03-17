@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback} from 'react';
 import Navbar from './Navbar';
 import Card from './Card';
-import Carrusel from './Carrusel'
+import Carrusel from './CarruselP'
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebaseConfig/firebase';
 import '../styles/bloques2.css';

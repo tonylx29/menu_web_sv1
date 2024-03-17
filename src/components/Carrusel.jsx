@@ -14,7 +14,7 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div id="carouselExample" className="carousel slide">
+    <div id="carousel-1" className="carousel slide" data-bs-ride="carousel" >
       <div className="carousel-inner">
         <div className={`carousel-item ${activeIndex === 0 ? 'active' : ''}`}>
           <img src="https://www.unl.edu.ec/sites/default/files/galeria/2021/02/HEADER1.jpg" className="d-block w-100" alt="..." />

@@ -7,49 +7,69 @@ import energiaImg from '../images/energia.jpg';
 import juridicaImg from '../images/juridica.jpg';
 import saludImg from '../images/salud.jpg';
 import educacionDistanciaImg from '../images/educacion_distancia.jpg';
+import BarraB from './BarraB';
+import CarruselP from './CarruselP';
+export const PaginaPrincipal = () => {
+  return (
 
-export const PaginaPrincipal = () => {  
-    return (
-        <div className="menu">
-          <h2>Pagina Principal </h2>
-            <div className="menu-options">
-              <div className="option">
-                <img src= {agropecuariaImg} alt="Imagen 2" />
-                <p>Agropecuaria y de Recursos Naturales Renovable</p>
-                <Link to="/bloques"><button>Botón 3</button></Link>
-              </div>
+    <div className="menu">
+      <BarraB />
+      <CarruselP />
+      <div class="principal">
+        <div class="card" >
+          <img src={agropecuariaImg} alt="Imagen 2" />
 
-              <div className="option">
-                <img src={educacionImg} alt="Imagen 2" />
-                <p> Educación, el Arte y la Comunicación</p>
-                <Link to="/bloques"><button>Botón 3</button></Link>
-              </div>
-
-              <div className="option">
-                <img src= {energiaImg} alt="Imagen 2" />
-                <p> Energía, las Industrias y los Recursos Naturales no Renovables</p>
-                <Link to="/bloques"><button>Botón 3</button></Link>
-              </div>
-
-              <div className="option">
-                <img src= {juridicaImg} alt="Imagen 2" />
-                <p> Jurídica, Social y Administrativa</p>
-                <Link to="/bloques"><button>Botón 3</button></Link>
-              </div>
-
-              <div className="option">
-                <img src= {saludImg} alt="Imagen 2" />
-                <p> Salud Humana</p>
-                <Link to="/bloques"><button>Botón 3</button></Link>
-              </div>
-
-              <div className="option">
-                <img src= {educacionDistanciaImg} alt="Imagen 2" />
-                <p> Unidad de Educación a Distancia y en Línea </p>
-                <Link to="/bloques"><button>Botón 3</button></Link>
-              </div>
-
-            </div>
+          <div class="card-body">
+            <h5 class="card-title">Agropecuaria y de Recursos Naturales Renovable</h5>
+          </div>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
         </div>
-    );
+
+        <div class="card" >
+          <img src={educacionImg} alt="Imagen 2" />
+
+          <div class="card-body">
+            <h5 class="card-title">Educación, el Arte y la Comunicación</h5>
+          </div>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+        </div>
+
+        <div class="card">
+          <img src={energiaImg} alt="Imagen 2" />
+
+          <div class="card-body">
+            <h5 class="card-title">Energía, las Industrias y los Recursos Naturales no Renovables</h5>
+          </div>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+        </div>
+        <div class="card" >
+          <img src={juridicaImg} alt="Imagen 2" />
+
+          <div class="card-body">
+            <h5 class="card-title">Jurídica, Social y Administrativa</h5>
+          </div>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+        </div>
+
+        <div class="card" >
+          <img src={saludImg} alt="Imagen 2" />
+
+          <div class="card-body">
+            <h5 class="card-title">Salud Humana</h5>
+          </div>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+        </div>
+
+        <div class="card" >
+          <img src={educacionDistanciaImg} alt="Imagen 2" />
+
+          <div class="card-body">
+            <h5 class="card-title">Unidad de Educación a Distancia y en Línea</h5>
+          </div>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+        </div>
+      </div>
+
+    </div>
+  );
 }
