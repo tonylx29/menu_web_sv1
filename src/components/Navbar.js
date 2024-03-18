@@ -1,11 +1,12 @@
 import React from 'react';
+import logoUNL from '../images/logoUNL.png';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">UNL</Link>
+                <Link className="navbar-brand" to="/"> <img src={logoUNL} style={{ width: "200px", marginTop: "10px" }} alt="Logo" /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
