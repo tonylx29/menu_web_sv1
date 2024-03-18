@@ -1,15 +1,52 @@
 /* map.css */
+.map{
+  background-color: red;
+  height: 700px;
+  background-image: url('https://www.unl.edu.ec/sites/default/files/galeria/2021/02/HEADER1.jpg');
+  background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen de fondo */
+  position: relative; /* Ajusta la posición del contenido interno */
+
+}
 .map-container {
-    text-align: center;
-    position: relative;
-  }
-  
-  .map-container img {
-    max-width: 100%;
-    height: auto;
-    border: 5px solid #ccc; /* Marco gris para la imagen */
-    border-radius: 8px; /* Bordes redondeados para la imagen */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-    margin-top: 20px; /* Espacio arriba de la imagen */
-  }
-  
+  text-align: center;
+  position: relative;
+  background-color: rgba(21, 101, 192, 0.5); /* Fondo semi transparente con el color convertido */
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 0;
+  border-radius: 20px;
+  margin-top: 50px;
+
+}
+
+.map-container img {
+  max-width: 200%;
+  height: auto;
+  border: 5px solid #283593;
+  /* Marco gris para la imagen */
+  border-radius: 8px;
+  /* Bordes redondeados para la imagen */
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  /* Sombra para dar profundidad */
+  margin-top: 20px;
+  /* Espacio arriba de la imagen */
+}
+.titulo{ 
+  background: linear-gradient(to bottom, #283593, #3F51B5  ); /* Degradado de azul a verde */
+  color: white;  
+  margin-top: -40px;
+  border-top-left-radius: 20px; /* Radio de esquina superior izquierda de 20px */
+  border-top-right-radius: 20px; /* Radio de esquina superior izquierda de 20px */
+}
+.map::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit; /* Hereda la imagen de fondo del elemento principal */
+  filter: blur(2px); /* Aplica un desenfoque de 10 píxeles */
+}

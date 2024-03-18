@@ -3,6 +3,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { uploadBytes, ref, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../firebaseConfig/firebase';
+import Navbar from './Navbar';
 
 export const CreateCard = () => {
   const [Titulo, setTitulo] = useState('')
@@ -38,7 +39,11 @@ export const CreateCard = () => {
   }
 
   return (
+    <div className='createCard'>
+      <Navbar />  
     <div className='container'>
+
+      
       <div className='row'>
         <div className='col'>
           <h1> Crear bloque </h1>
@@ -55,7 +60,7 @@ export const CreateCard = () => {
             </div>
 
             <div className='mb-3'>
-              <label className='form-label'> descripción </label>
+              <label className='form-label'> Descripción </label>
               <input
                 value={descripción}
                 onChange={(e) => setDescripción(e.target.value)}
@@ -75,7 +80,7 @@ export const CreateCard = () => {
             </div>
 
             <div className='mb-3'>
-              <label className='form-label'> onClick </label>
+              <label className='form-label'> URL </label>
               <input
                 value={onClick}
                 onChange={(e) => setOnClick(e.target.value)}
@@ -89,6 +94,7 @@ export const CreateCard = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   )
 }

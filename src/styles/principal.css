@@ -10,15 +10,14 @@
   /* Espacio arriba y abajo del menú */
 }
 
-.card img{
+.mi-carta-principal img{
   width: 100%; /* Ancho del 100% del contenedor */
   height: 200px; /* Altura automática para mantener la proporción */
   /* Imágenes dentro de las opciones ocupan todo el ancho disponible */
 }
 
-.principal .card{
-  width: 18rem;
-  /*background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+.principal .mi-carta-principal{
+  width: 20rem;
   transition: background-color 0.3s ease; /* Transición suave para el cambio de color */  
   /*color: white; /* Texto blanco */
 }
@@ -26,17 +25,17 @@
   gap: 0px; /* Establece el espacio de 10px entre los elementos */
   margin-top: -12px;
 }
-.card:hover {
+.mi-carta-principal:hover {
   transform: scale(1.1); /* Cambia el tamaño del elemento al 110% en hover */
   transition: transform 0.3s ease; /* Agrega una transición suave al efecto de zoom */
  /* background-color: white;
   color: black;*/
 }
-.principal .card .btn-primary {
+.principal .mi-carta-principal .btn-primary {
   position: relative; /* Establece la posición relativa */
   overflow: hidden; /* Oculta el contenido que sobresale */
 }
-.card::after {
+.mi-carta-principal::after {
   content: "";
   position: absolute;
   top: 0;
@@ -47,7 +46,11 @@
   
   transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
 }
-.card:hover::after {
+.mi-carta-principal:hover::after {
   background-color: rgba(0, 0, 0, 0); /* Color negro transparente */
   display: none;
+}
+.menu .principal .mi-carta-principal {
+  margin-left: 0; /* Elimina el margen izquierdo */
+  margin-right: 0; /* Elimina el margen derecho */
 }

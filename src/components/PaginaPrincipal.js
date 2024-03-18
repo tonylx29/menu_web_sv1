@@ -16,57 +16,57 @@ export const PaginaPrincipal = () => {
       <Navbar />
       <CarruselP />
       <div class="principal">
-        <div class="card" >
+        <div class="card mi-carta-principal" >
           <img src={agropecuariaImg} alt="Imagen 2" />
 
           <div class="card-body">
             <h5 class="card-title">Agropecuaria y de Recursos Naturales Renovable</h5>
           </div>
-          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Visitar</a></Link>
         </div>
 
-        <div class="card" >
+        <div class="card mi-carta-principal" >
           <img src={educacionImg} alt="Imagen 2" />
 
           <div class="card-body">
             <h5 class="card-title">Educación, el Arte y la Comunicación</h5>
           </div>
-          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Visitar</a></Link>
         </div>
 
-        <div class="card">
+        <div class="card mi-carta-principal">
           <img src={energiaImg} alt="Imagen 2" />
 
           <div class="card-body">
             <h5 class="card-title">Energía, las Industrias y los Recursos Naturales no Renovables</h5>
           </div>
-          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Visitar</a></Link>
         </div>
-        <div class="card" >
+        <div class="card mi-carta-principal" >
           <img src={juridicaImg} alt="Imagen 2" />
 
           <div class="card-body">
             <h5 class="card-title">Jurídica, Social y Administrativa</h5>
           </div>
-          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Visitar</a></Link>
         </div>
 
-        <div class="card" >
+        <div class="card mi-carta-principal" >
           <img src={saludImg} alt="Imagen 2" />
 
           <div class="card-body">
             <h5 class="card-title">Salud Humana</h5>
           </div>
-          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Visitar</a></Link>
         </div>
 
-        <div class="card" >
+        <div class="card mi-carta-principal" >
           <img src={educacionDistanciaImg} alt="Imagen 2" />
 
           <div class="card-body">
             <h5 class="card-title">Unidad de Educación a Distancia y en Línea</h5>
           </div>
-          <Link to="/bloques"><a href="#" class="btn btn-primary">Ingresar</a></Link>
+          <Link to="/bloques"><a href="#" class="btn btn-primary">Visitar</a></Link>
         </div>
       </div>
 

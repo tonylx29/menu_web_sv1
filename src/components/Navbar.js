@@ -22,10 +22,7 @@ const Navbar = () => {
                             <Link class="nav-link" to="/mapa"> Mapa</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/create">Crear Tarjeta</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/show">Mostrar Tarjetas</Link>
+                            <Link className="nav-link" to="/show">Editar</Link>
                         </li>
                     </ul>
                 </div>

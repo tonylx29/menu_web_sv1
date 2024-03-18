@@ -1,36 +1,42 @@
-/* card.css */
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    width: 300px; /* o el ancho que prefieras */
-    text-align: center;
-  }
-  
-  .card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .card button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .card button:hover {
-    background-color: #0056b3;
-  }
-  
+/* PaginaPrincipal.css */
+
+/* Estilos generales del menú */  
+
+.menu {
+  margin-top: -50px;
+  width: 100%;
+  padding: 40px 0;
+
+  /* Ocupa todo el ancho de la pantalla */
+
+  /* Espacio arriba y abajo del menú */
+}
+
+.card img{
+  border-radius: 15px; /* Define un radio de borde de 10px para hacer los bordes redondeados */
+  width: 100%; /* Ancho del 100% del contenedor */
+  height: 200px; /* Altura automática para mantener la proporción */
+  /* Imágenes dentro de las opciones ocupan todo el ancho disponible */
+}
+
+.principal .card{
+  border: 3px solid transparent; /* Establece un borde transparente */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Define una sombra */
+  width: 20rem;
+  height: 400px; /* Define la altura del elemento */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */  
+  /*color: white; /* Texto blanco */
+}
+.principal{
+  margin-bottom: 20px;
+}
+.card:hover {
+  transform: scale(1.1); /* Cambia el tamaño del elemento al 110% en hover */
+  transition: transform 0.3s ease; /* Agrega una transición suave al efecto de zoom */
+ /* background-color: white;
+  color: black;*/
+}
+.principal .card .btn-primary {
+  position: relative; /* Establece la posición relativa */
+  overflow: hidden; /* Oculta el contenido que sobresale */
+}

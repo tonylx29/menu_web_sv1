@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getDoc, updateDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConfig/firebase';
 import { uploadImageToStorage } from './StorageUtils';
-
+import Navbar from './Navbar';
 export const EditCard = () => {
   const [Titulo, setTitulo] = useState('')
   const [descripción, setDescripción] = useState('')
@@ -25,7 +25,7 @@ export const EditCard = () => {
     const bloque = doc(db, "bloques", id)
     const data = { Titulo: Titulo, descripción: descripción, imagen: nuevaURLImagen, onClick: onClick }
     await updateDoc(bloque, data)
-    navigate('/')
+    navigate('/bloques')
 
   }
 
@@ -48,49 +48,51 @@ export const EditCard = () => {
   }, [id]);
 
   return (
-    <div className='container'>
-      <div className='row'>
-        <div className='col'>
-          <h1> Editar bloque </h1>
-          <form onSubmit={update}>
-            <div className='mb-3'>
-              <label className='form-label'> Titulo </label>
-              <input
-                value={Titulo}
-                onChange={(e) => setTitulo(e.target.value)}
-                type="text"
-                className='form-control'
-              />
-            </div>
-            <div className='mb-3'>
-              <label className='form-label'> descripción </label>
-              <input
-                value={descripción}
-                onChange={(e) => setDescripción(e.target.value)}
-                type="text"
-                className='form-control'
-              />
-            </div>
-            <div className='mb-3'>
-              <label className='form-label'> Imagen </label>
-              {imagen && <img src={imagen} alt="Imagen actual" />} {/* Mostrar la imagen actual */}
-              <input
-                type="file"
-                className='form-control'
-                onChange={(e) => setNuevaImagen(e.target.files[0])} // Actualizar la nueva imagen seleccionada
-              />
-            </div>
-            <div className='mb-3'>
-              <label className='form-label'> onClick </label>
-              <input
-                value={onClick}
-                onChange={(e) => setOnClick(e.target.value)}
-                type="text"
-                className='form-control'
-              />
-            </div>
-            <button type='submit' className='btn btn-primary'> Update </button>
-          </form>
+    <div><Navbar />
+      <div className='container'>
+        <div className='row'>
+          <div className='col'>
+            <h1> Editar Bloque </h1>
+            <form onSubmit={update}>
+              <div className='mb-3'>
+                <label className='form-label'> Título </label>
+                <input
+                  value={Titulo}
+                  onChange={(e) => setTitulo(e.target.value)}
+                  type="text"
+                  className='form-control'
+                />
+              </div>
+              <div className='mb-3'>
+                <label className='form-label'> Descripción </label>
+                <input
+                  value={descripción}
+                  onChange={(e) => setDescripción(e.target.value)}
+                  type="text"
+                  className='form-control'
+                />
+              </div>
+              <div className='mb-3'>
+                <label className='form-label'> Imagen </label>
+                {imagen && <img src={imagen} alt="Imagen actual" />} {/* Mostrar la imagen actual */}
+                <input
+                  type="file"
+                  className='form-control'
+                  onChange={(e) => setNuevaImagen(e.target.files[0])} // Actualizar la nueva imagen seleccionada
+                />
+              </div>
+              <div className='mb-3'>
+                <label className='form-label'> URL </label>
+                <input
+                  value={onClick}
+                  onChange={(e) => setOnClick(e.target.value)}
+                  type="text"
+                  className='form-control'
+                />
+              </div>
+              <button type='submit' className='btn btn-primary'> Guardar cambios </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
