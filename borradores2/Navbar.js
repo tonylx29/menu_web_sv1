@@ -1,16 +1,12 @@
-// Navbar.js
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import logoUNL from '../images/logoUNL.png';
 import { Link } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 
 const Navbar = () => {
-    const { user, isAdmin, isAuthenticated, logout } = useAuth();
-    const [authenticated, setAuthenticated] = useState(isAuthenticated);
-
-    useEffect(() => {
-        setAuthenticated(isAuthenticated);
-    }, [isAuthenticated]); // Esta dependencia asegura que el efecto se ejecute cada vez que isAuthenticated cambie
+    //const { isAdmin } = useAuth();
+    const { user, isAdmin, logout } = useAuth();
+    const [isRegistering, setIsRegistering] = useState(false);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,7 +34,7 @@ const Navbar = () => {
 
                     </ul>
                     <ul className="navbar-nav ml-auto">
-                        {authenticated && user ? (
+                        {user ? (
                             <>
                                 <li className="nav-item">
                                     <span className="nav-link">{user.displayName || user.email}</span>
@@ -49,12 +45,25 @@ const Navbar = () => {
                             </>
                         ) : (
                             <>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/iniciarsesion">Iniciar Sesión</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/register">Registrarse</Link>
-                                </li>
+                                {isRegistering ? (
+                                    <>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/register">Registrarse</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/iniciarsesion">Iniciar Sesión</Link>
+                                        </li>
+                                    </>
+                                ) : (
+                                    <>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/iniciarsesion">Iniciar Sesión</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/register">Registrarse</Link>
+                                        </li>
+                                    </>
+                                )}
                             </>
                         )}
                     </ul>
@@ -65,5 +74,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
 

@@ -23,6 +23,7 @@ const MenuBloquesDinamicos = () => {
     return (
         <div className="Principal">
             <Navbar />
+            <Carrusel />
             <div className="principal">
                 {cards.map(card => (
                     <Card
@@ -35,7 +36,6 @@ const MenuBloquesDinamicos = () => {
                 ))}
             
             </div>
-            <Carrusel />
         </div>
     );
 }
