@@ -7,13 +7,13 @@ import energiaImg from '../images/energia.jpg';
 import juridicaImg from '../images/juridica.jpg';
 import saludImg from '../images/salud.jpg';
 import educacionDistanciaImg from '../images/educacion_distancia.jpg';
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
 import CarruselP from './CarruselP';
 
 export const PaginaPrincipal = () => {
   return (
     <div className="menu">
-      <Navbar />
+      {/*  <Navbar /> */}
       <CarruselP />
       <div className="principal">
         <div className="card mi-carta-principal" >

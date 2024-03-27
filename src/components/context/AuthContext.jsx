@@ -8,7 +8,9 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     signOut,
-    onAuthStateChanged
+    onAuthStateChanged,
+    updatePassword,
+    deleteUser,
 } from "firebase/auth";
 
 export const authContext = createContext();
@@ -25,6 +27,7 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [isAdmin, setIsAdmin] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -35,69 +38,121 @@ export function AuthProvider({ children }) {
                     const userDoc = await getDoc(doc(db, "users", currentUser.uid));
                     if (userDoc.exists()) {
                         const userData = userDoc.data();
-                        if (userData.role === "admin") {
-                            setIsAdmin(true);
-                        } else {
-                            setIsAdmin(false);
-                        }
+                        setIsAdmin(userData.role === "admin");
                     }
                 } catch (error) {
                     console.error("Error fetching user role:", error);
+                    setErrorMessage("Error al obtener el rol del usuario"); // Mensaje de error personalizado
                 }
             } else {
                 setIsAuthenticated(false);
                 setIsAdmin(false);
             }
+        }, (error) => {
+            console.error("Error onAuthStateChanged:", error);
+            setErrorMessage("Error al iniciar sesión"); // Mensaje de error general
         });
         return unsubscribe;
     }, []);
 
     const register = async (email, password) => {
         try {
+            //Controlar la clave
+            if (password.length < 8) {
+                throw new Error('La contraseña debe tener al menos 8 caracteres.');
+            }
             const response = await createUserWithEmailAndPassword(auth, email, password);
             // Crear el documento de usuario en Firestore con rol por defecto
             await setDoc(doc(db, "users", response.user.uid), { role: "user" });
             setIsAuthenticated(true); // Establecer isAuthenticated como true después de registrar
         } catch (error) {
+            setErrorMessage(error.message);
             console.error("Error registering user:", error);
         }
     };
 
     const login = async (email, password) => {
         try {
-            //const response = await signInWithEmailAndPassword(auth, email, password);
-            //console.log(response);
             await signInWithEmailAndPassword(auth, email, password);
             setIsAuthenticated(true); // Establecer isAuthenticated como true después de iniciar sesión
         } catch (error) {
+            setErrorMessage(error.message);
             console.error("Error logging in:", error);
         }
     };
 
     const loginWithGoogle = async () => {
         try {
-            //const response = await signInWithPopup(auth, new GoogleAuthProvider());
-            //console.log(response);
             await signInWithPopup(auth, new GoogleAuthProvider());
             setIsAuthenticated(true); // Establecer isAuthenticated como true después de iniciar sesión con Google
+            // Aquí deberías crear el documento de usuario en Firestore si no existe
+            // Obtener el usuario actualmente autenticado
+            const currentUser = auth.currentUser;
+            // Verificar si el documento de usuario ya existe en Firestore
+            const userDoc = await getDoc(doc(db, "users", currentUser.uid));
+            if (!userDoc.exists()) {
+                // Si no existe, crear el documento de usuario con el rol por defecto
+                await setDoc(doc(db, "users", currentUser.uid), { role: "user" });
+            }
         } catch (error) {
+            setErrorMessage(error.message);
             console.error("Error logging in with Google:", error);
         }
     };
 
     const logout = async () => {
         try {
-            //const response = await signOut(auth);
-            //console.log(response);
             await signOut(auth);
-            setIsAuthenticated(false); // Establecer isAuthenticated como false después de cerrar sesión
+            setIsAuthenticated(false);
+            setIsAdmin(false);// Establecer isAuthenticated como false después de cerrar sesión
         } catch (error) {
+            setErrorMessage(error.message);
             console.error("Error logging out:", error);
         }
     };
 
+
+    /*
+
+    const updateProfile = async (displayName, photoURL) => {
+    try {
+      if (user) {
+        await updateProfile(user, { displayName, photoURL });
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+      console.error("Error updating profile:", error);
+    }
+  };
+
+  const changePassword = async (newPassword) => {
+    try {
+      if (user) {
+        await updatePassword(user, newPassword);
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+      console.error("Error changing password:", error);
+    }
+  };
+
+  const deleteAccount = async () => {
+    try {
+      if (user) {
+        await deleteUser(user);
+        setIsAuthenticated(false);
+        setIsAdmin(false);
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+      console.error("Error deleting account:", error);
+    }
+  };
+
+    */
+
     return (
-        <authContext.Provider value={{ user, isAdmin, isAuthenticated, register, login, loginWithGoogle, logout }}>
+        <authContext.Provider value={{ user, isAdmin, isAuthenticated, errorMessage, setErrorMessage, register, login, loginWithGoogle, logout }}>
             {children}
         </authContext.Provider>
     );

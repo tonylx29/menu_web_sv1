@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback} from 'react';
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
 import Card from './Card';
 import Carrusel from './CarruselP'
 import { collection, getDocs } from 'firebase/firestore';
@@ -22,7 +22,7 @@ const MenuBloquesDinamicos = () => {
 
     return (
         <div className="Principal">
-            <Navbar />
+            {/*  <Navbar /> */}
             <Carrusel />
             <div className="principal">
                 {cards.map(card => (

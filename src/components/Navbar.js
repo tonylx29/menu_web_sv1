@@ -1,16 +1,11 @@
 // Navbar.js
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import logoUNL from '../images/logoUNL.png';
 import { Link } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 
 const Navbar = () => {
     const { user, isAdmin, isAuthenticated, logout } = useAuth();
-    const [authenticated, setAuthenticated] = useState(isAuthenticated);
-
-    useEffect(() => {
-        setAuthenticated(isAuthenticated);
-    }, [isAuthenticated]); // Esta dependencia asegura que el efecto se ejecute cada vez que isAuthenticated cambie
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,18 +22,17 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/bloques">Bloques</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/mapa"> Mapa</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/mapa">Mapa</Link>
                         </li>
                         {isAdmin && (
                             <li className="nav-item">
-                                <Link className="nav-link" to="/show">Editar</Link>
+                                <Link className="nav-link" to="/adminitracion">Adminitracion</Link>
                             </li>
                         )}
-
                     </ul>
                     <ul className="navbar-nav ml-auto">
-                        {authenticated && user ? (
+                        {isAuthenticated && user ? (
                             <>
                                 <li className="nav-item">
                                     <span className="nav-link">{user.displayName || user.email}</span>
@@ -53,16 +47,17 @@ const Navbar = () => {
                                     <Link className="nav-link" to="/iniciarsesion">Iniciar Sesión</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/register">Registrarse</Link>
+                                    <Link className="nav-link" to="/registro">Registrarse</Link>
                                 </li>
                             </>
                         )}
+
                     </ul>
                 </div>
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;
 

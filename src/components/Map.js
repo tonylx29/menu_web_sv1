@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/map.css';
 
 import plantaImg from '../images/planta-facultad.jpg'; // Asegúrate de que la ruta a la imagen es correcta
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
 
 
 export const Map = () => {
@@ -11,7 +11,7 @@ export const Map = () => {
 
 
     <div className="map">
-      <Navbar />
+      {/*  <Navbar /> */}
       <div className="map-container">
         <div className='titulo'><h2>Facultad de Energía, las Industrias y los Recursos Naturales No Renovables</h2></div>
         

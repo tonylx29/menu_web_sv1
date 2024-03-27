@@ -3,7 +3,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { uploadBytes, ref, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../firebaseConfig/firebase';
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
 
 export const CreateCard = () => {
   const [Titulo, setTitulo] = useState('')
@@ -40,61 +40,61 @@ export const CreateCard = () => {
 
   return (
     <div className='createCard'>
-      <Navbar />  
-    <div className='container'>
+      {/*  <Navbar /> */}
+      <div className='container'>
 
-      
-      <div className='row'>
-        <div className='col'>
-          <h1> Crear bloque </h1>
-          <form onSubmit={store}>
 
-            <div className='mb-3'>
-              <label className='form-label'> Titulo </label>
-              <input
-                value={Titulo}
-                onChange={(e) => setTitulo(e.target.value)}
-                type="text"
-                className='form-control'
-              />
-            </div>
+        <div className='row'>
+          <div className='col'>
+            <h1> Crear bloque </h1>
+            <form onSubmit={store}>
 
-            <div className='mb-3'>
-              <label className='form-label'> Descripción </label>
-              <input
-                value={descripción}
-                onChange={(e) => setDescripción(e.target.value)}
-                type="text"
-                className='form-control'
-              />
-            </div>
+              <div className='mb-3'>
+                <label className='form-label'> Titulo </label>
+                <input
+                  value={Titulo}
+                  onChange={(e) => setTitulo(e.target.value)}
+                  type="text"
+                  className='form-control'
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label className='form-label'> Imagen </label>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-                className='form-control'
-              />
-            </div>
+              <div className='mb-3'>
+                <label className='form-label'> Descripción </label>
+                <input
+                  value={descripción}
+                  onChange={(e) => setDescripción(e.target.value)}
+                  type="text"
+                  className='form-control'
+                />
+              </div>
 
-            <div className='mb-3'>
-              <label className='form-label'> URL </label>
-              <input
-                value={onClick}
-                onChange={(e) => setOnClick(e.target.value)}
-                type="text"
-                className='form-control'
-              />
-            </div>
+              <div className='mb-3'>
+                <label className='form-label'> Imagen </label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className='form-control'
+                />
+              </div>
 
-            <button type='submit' className='btn btn-primary'> Guardar </button>
+              <div className='mb-3'>
+                <label className='form-label'> URL </label>
+                <input
+                  value={onClick}
+                  onChange={(e) => setOnClick(e.target.value)}
+                  type="text"
+                  className='form-control'
+                />
+              </div>
 
-          </form>
+              <button type='submit' className='btn btn-primary'> Guardar </button>
+
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }

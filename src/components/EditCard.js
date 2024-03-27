@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getDoc, updateDoc, doc } from 'firebase/firestore';
 import { db } from '../firebaseConfig/firebase';
 import { uploadImageToStorage } from './StorageUtils';
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
 export const EditCard = () => {
   const [Titulo, setTitulo] = useState('')
   const [descripción, setDescripción] = useState('')
@@ -48,7 +48,7 @@ export const EditCard = () => {
   }, [id]);
 
   return (
-    <div><Navbar />
+    <div>{/*  <Navbar /> */}
       <div className='container'>
         <div className='row'>
           <div className='col'>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback} from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
 import { db } from '../firebaseConfig/firebase'
@@ -6,7 +6,7 @@ import { db } from '../firebaseConfig/firebase'
 /* Funciones para eliminar un documento */
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import Navbar from './Navbar'
+//import Navbar from './Navbar'
 
 const MySwal = withReactContent(Swal)
 
@@ -17,7 +17,7 @@ export const ShowCard = () => {
     //2) Referenciar a la DB firestore.
     //const bloquesColecction = collection(db, "bloques")
 
-    
+
     //3) Funcion para mostrar todos los docs.
     const getBloques = useCallback(async () => {
         const bloquesCollection = collection(db, 'bloques');
@@ -65,7 +65,7 @@ export const ShowCard = () => {
 
     return (
         <>
-        <Navbar/>
+            {/*  <Navbar /> */}
             <div className='container'>
                 <div className='row'>
                     <div className='col'>
